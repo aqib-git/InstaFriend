@@ -1,0 +1,21 @@
+{
+    "name": "aqibpandit/instafriend",
+    "type": "bot",
+    "description": "Bot for Instagram",
+    "keywords": ["instagram","friends", "media", "images"],
+    "homepage": "https://github.com/Seldaek/monolog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aqibpandit",
+            "email": "aqi64u@gmail.com",
+            "homepage": "http://aqibpandit.com",
+            "role": "Developer"
+        }
+    ],
+   "autoload": {
+        "psr-4": {
+            "AqibPandit\\InstaFriend\\": "src"
+        }
+    }
+}
