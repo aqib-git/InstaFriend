@@ -17,5 +17,8 @@
         "psr-4": {
             "AqibPandit\\InstaFriend\\": "src"
         }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
     }
 }

@@ -1,2 +1,2 @@
 # InstaFriend
-Instagram Bot
+Instagram Bot for freinds.
