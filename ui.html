@@ -1,0 +1,63 @@
+<html lang="en" >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="assets/css/angular-material.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body ng-app="InstaFriend" ng-cloak>
+    <div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak>
+        <section layout="row" ng-controller="InstaCtrl" flex>
+            <!-- navbar -->
+            <md-sidenav
+              class="md-sidenav-left"
+              md-component-id="left"
+              md-is-locked-open="$mdMedia('gt-md')"
+              md-whiteframe="4">
+                <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">InstaFriend</h1>
+                </md-toolbar>
+                <md-content layout-padding ng-controller="LeftCtrl">
+                <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                  Close
+                </md-button>
+                <ul>
+                    <li class="loginuser"><img ng-src="{{currentUser.profile_picture || 'assets/img/fakeprofilepic.png'}}"> <span class="name">{{currentUser.full_name}}</span></li>
+                    <li><a href="" ng-click="instagram.getFollowerImages()">Follower Images</a></li>  
+                </ul>
+                </md-content>
+            </md-sidenav>
+            <!-- main content -->
+            <md-content flex layout-padding>
+                <div layout="column" layout-align="top center">
+                    <div>
+                        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                            MENU                            
+                        </md-button>
+                    </div>
+                    <div class="content">
+                        <h3 class="error-msg" ng-if="instagram.authorizationCancelled">You have cancelled the authorization to your instagram account. To authorize <b>InstaFriend</b> again hit the below authorize button.</h3>
+                        <h3 class="error-msg" ng-if="instagram.accessTokenError">Unable to get Access token, please authorize again.</h3>
+                        <a ng-if="instagram.showAuthorizeButton" href="{{instagram.redirectUri}}"><md-button class="md-raised md-primary">Authorize</md-button></a>    
+                    </div>
+                </div>
+                <div flex></div>
+            </md-content>
+        </section>
+    </div>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="assets/js/libs/angular.min.js"></script>
+    <script src="assets/js/libs/angular-animate.min.js"></script>
+    <script src="assets/js/libs/angular-aria.min.js"></script>
+    <script src="assets/js/libs/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="assets/js/libs/angular-material.min.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script src="assets/js/app.js" type="text/javascript"></script> 
+    <script src="assets/js/instagram-service.js" type="text/javascript"></script>
+    <script src="assets/js/instagram-controller.js" type="text/javascript"></script>  
+</body>
+</html>

@@ -1,0 +1,19 @@
+.error-msg {
+    text-align: center;
+    color: red;
+    font-weight: 400;
+}
+
+.loginuser {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.loginuser img {
+    border-radius: 50%;
+    width:120px;
+    height: 120px;
+}
+.loginuser .name {
+    display: block;
+    text-align: center;
+}
